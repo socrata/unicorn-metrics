@@ -12,9 +12,9 @@ class UnicornMetrics::Timer
   # let's store 3 significant digits after the decimal
   EXPONENT = -3
 
-  class Stats < Raindrops::Struct.new(:count, :mantissa) ; end
+  class Stats < Raindrops::Struct.new(:count, :mantissa, :consume) ; end
 
-  def_instance_delegators :@stats, :mantissa, :count
+  def_instance_delegators :@stats, :mantissa, :count, :consume
 
   # @param name [String] user-defined name
   def initialize(name)
@@ -32,6 +32,7 @@ class UnicornMetrics::Timer
 
     @stats.mantissa = mantissa + elapsed_time
     @stats.incr_count
+    @stats.consume = elapsed_time
   end
 
   # Reset the timer
@@ -48,9 +49,10 @@ class UnicornMetrics::Timer
   def as_json(*)
     {
       name => {
-        "type"  => type,
-        "sum"   => sum,
-        "value" => count
+        type: type,
+        sum: sum,
+        times: count,
+        consume: consume
       }
     }
   end
