@@ -50,13 +50,13 @@ module UnicornMetrics
 end
 
 require 'raindrops'
-require 'unicorn_metrics/registry'
-require 'unicorn_metrics/version'
-require 'unicorn_metrics/counter'
-require 'unicorn_metrics/timer'
-require 'unicorn_metrics/default_http_metrics'
-require 'unicorn_metrics/request_counter'
-require 'unicorn_metrics/request_timer'
-require 'unicorn_metrics/response_counter'
+require_relative 'unicorn_metrics/registry'
+require_relative 'unicorn_metrics/version'
+require_relative 'unicorn_metrics/counter'
+require_relative 'unicorn_metrics/timer'
+require_relative 'unicorn_metrics/default_http_metrics'
+require_relative 'unicorn_metrics/request_counter'
+require_relative 'unicorn_metrics/request_timer'
+require_relative 'unicorn_metrics/response_counter'
 require 'forwardable'
 
