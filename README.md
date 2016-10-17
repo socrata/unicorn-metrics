@@ -147,7 +147,7 @@ Add to the top of the middleware stack in `config.ru`:
     # config.ru
 
     require 'unicorn_metrics/middleware'
-    use UnicornMetrics::Middleware, :path => "/metrics"
+    use UnicornMetrics::Middleware, :metrics => '/metrics'
     # other middleware...
     run N::Application
 ```
