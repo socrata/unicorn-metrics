@@ -2,4 +2,3 @@
 - [ ] Ran `bundle install` and updated the `Gemfile.lock` if any `Gemfile` changes were made
 - [ ] Ran unit tests with `bundle exec rake`
 - [ ] Made sure the JIRA ticket ID is in the commit message(s)
-- [ ] Made sure the tests passed for realzies (check Jenkins [frontend-pull-request-test](https://jenkins-build.socrata.com/job/frontend-pull-request-test/) job)
