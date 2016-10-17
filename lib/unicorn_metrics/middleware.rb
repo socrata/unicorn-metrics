@@ -11,6 +11,7 @@ class UnicornMetrics::Middleware < Raindrops::Middleware
   def initialize(app, opts = {})
     @registry     = UnicornMetrics::Registry
     @metrics_path = opts[:metrics] || "/metrics"
+    @path = @metrics_path # Raindrops uses @path as the mount point
     super
   end
 
