@@ -50,6 +50,7 @@ module UnicornMetrics
 end
 
 require 'raindrops'
+require 'forwardable'
 require_relative 'unicorn_metrics/registry'
 require_relative 'unicorn_metrics/version'
 require_relative 'unicorn_metrics/counter'
@@ -58,5 +59,3 @@ require_relative 'unicorn_metrics/default_http_metrics'
 require_relative 'unicorn_metrics/request_counter'
 require_relative 'unicorn_metrics/request_timer'
 require_relative 'unicorn_metrics/response_counter'
-require 'forwardable'
-
